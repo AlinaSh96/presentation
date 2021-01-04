@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>React.js</title>
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/moon.css" id="theme">
+	<link rel="stylesheet" href="css/main.scss">
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>React. js</h1>
+				<h4>A JavaScript library for building user interfaces</h4>
+				<img class="img-fluid" width="100px" src="./react.svg" alt="">
+			</section>
+			<section>
+				<section>What is React.js?</section>
+				<section>
+					<ul class="list-unstyled custom">
+						<li>React was created by Jordan Walke, a software engineer at Facebook</li>
+						<li>React is a JavaScript library created for building fast and interactive user interfaces for web and
+							mobile application</li>
+							<li>It is an open-source, component-based, front-end library responsible only for the application’s view layer</li>
+					</ul>
+				</section>
+				<section>
+					<img class="img-fluid" src="./instagram-components.jpg" alt="">
+				</section>
+			</section>
+			<section>
+				<section>Why React?</section>
+				<section>
+					<ul class="list-unstyled custom"">
+						<li>Easy creation of dynamic applications</li>
+						<li>Improved performance</li>
+						<li>Reusable components</li>
+						<li>Unidirectional data flow</li>
+						<li>Small learning curve</li>
+						<li>It can be used for the development of both web and mobile apps</li>
+						<li>Dedicated tools for easy debugging</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>Features of React</section>
+				<section>
+					<img class="img-fluid" src="./reactjs-features.png" alt="">
+				</section>
+				<section>JSX
+					<pre><code data-trim data-noescape>
+		    const name = 'Simplilearn';
+						const greet = Hello, {name};
+							</code></pre>
+							<p class ="custom">JSX is a syntax extension to JavaScript. It is used with React to describe what the user interface should look like.
+								 By using JSX, we can write HTML structures in the same file that contains JavaScript code. This makes the code easier to understand and debug, as it avoids the usage of complex JavaScript DOM structures.
+							</p>
+				</section>
+				<section>Virtual DOM
+					<p class ="custom">
+						React keeps a lightweight representation of the “real” DOM in the memory, and that is known as the “virtual” DOM (VDOM). Manipulating real DOM is much slower than manipulating VDOM because nothing gets drawn on the screen. When the state of an object changes,
+						 VDOM changes only that object in the real DOM instead of updating all of the objects.
+					</p>
+				</section>
+				<section>Performance
+					<p class ="custom">
+						React uses VDOM, which makes the web applications run much faster than those developed with alternate front-end frameworks. React breaks a complex user interface into individual components,
+						 allowing multiple users to work on each component simultaneously, thereby speeding up the development time. 
+					</p>
+				</section>
+				<section>Extensions
+					<p class ="custom">
+						React goes beyond simple UI design and has many extensions that offer complete application architecture support. It provides server-side rendering, which entails rendering a normally client-side only web application on the server, and then sends a fully rendered page to the client. It also employs Flux and Redux extensively in web application development.
+						 Finally, there is React Native, a popular framework derived from React, used to create cross-compatible mobile applications.
+					</p>
+				</section>
+				<section>One-way Data Binding
+					<p class ="custom">
+						React’s one-way data binding keeps everything modular and fast. A unidirectional data flow means that when a developer designs a React app, they often nest child components within parent components.
+						 This way, a developer knows where and when an error occurs, giving them better control of the whole web application.
+					</p>
+				</section>
+				<!-- <section>One-way Data Binding</section> -->
+				<section>Debugging
+					<p class ="custom">
+						React applications are easy to test due to a large developer community.
+						 Facebook even provides a small browser extension that makes React debugging faster and easier.
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>Components, State, and Props</section>
+				<section>
+					Components
+					<p class ="custom">Components are the building blocks of any React application, and 
+						a single app usually consists of multiple components.</p>
+					<ul >
+						<li class ="custom">Functional Components</li>
+						<div>
+							<pre><code data-trim >
+								function Greeting(props) {
+									return <h1>Welcome to {props.name}</h1>;
+								}
+								</code></pre>
+							</div>
+						<li class ="custom">Class Components	</li>
+						<div>
+							<pre><code data-trim >
+									class Greeting extends React.Component {
+										render() {
+											return <h1>Welcome to {this.props.name}</h1>;
+										}
+									}
+									</code></pre>
+							</div>
+					</ul>
+				</section>
+				<section>
+					State
+					<p class ="custom">The state is a built-in React object that is used to contain data or information about the component. A component’s state can change over time; whenever it changes, the component re-renders. The change in state can happen as a response to user action or system-generated events,
+						 and these changes determine the behavior of the component and how it will rende</p>
+					<pre><code data-trim >
+						class Greetings extends React.Component {
+							state = { name: "World" };
+							updateName() {
+								this.setState({ name: "Simplilearn" });
+							}
+							render() {
+								return (
+									<div>
+										{this.state.name}
+									</div>
+								)
+							}
+						 }
+						</code></pre>
+				</section>
+				<section>
+					Props
+					<p class ="custom">
+						Props are short for properties. It is a React built-in object which stores the value of a tag’s attributes and works similar to the HTML attributes.
+						 It provides a way to pass data from one component to other components in the same way as arguments are passed in a function.
+					</p>
+					<pre><code data-trim >
+						class Car extends React.Component {
+							render() {
+								return <h2>I am a {this.props.brand.model}!</h2>;
+							}
+						}
+						class Garage extends React.Component {
+							render() {
+								const carinfo = {name: "Ford", model: "Mustang"};
+								return (
+									<div>
+									<h1>Who lives in my garage?</h1>
+									<Car brand={carinfo} />
+									</div>
+								);
+							}
+						}
+						ReactDOM.render(<Garage />, document.getElementById('root'));
+						</code></pre>
+				</section>
+			</section>
+			<section>THANK YOU</section>
+		</div>
+	</div>
+
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
